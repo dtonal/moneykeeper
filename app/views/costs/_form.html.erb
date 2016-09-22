@@ -1,0 +1,35 @@
+<%= form_for @cost do |f| %>
+
+  <% if @cost.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@cost.errors.count, "error") %> prohibited
+        this cost from being saved:
+      </h2>
+      <ul>
+        <% @cost.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :price %><br>
+    <%= f.number_field :price, :class => 'text_field', :step => 0.01 %>
+  </p>
+  <p>
+    <%= f.label :store %><br>
+    <%= f.select :store, Market.categories.collect { |c| [ c, c ] }%>
+  </p>
+
+  <p>
+    <%= f.label :comment %><br>
+    <%= f.text_area :comment %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>

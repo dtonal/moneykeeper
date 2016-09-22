@@ -1,0 +1,27 @@
+<h1> That's your cost :O </h1>
+
+<p>
+  <strong>Price:</strong>
+  <%= @cost.price %>
+</p>
+
+<p>
+  <strong>store:</strong>
+  <%= @cost.store %>
+</p>
+
+
+<p>
+  <strong>Comment:</strong>
+  <%= @cost.comment %>
+</p>
+
+
+<p>
+  <strong>Time:</strong>
+  <%= @cost.created_at %>
+</p>
+
+
+<%= link_to 'Back', costs_path %>
+<%= link_to 'Edit', edit_cost_path(@cost) %>

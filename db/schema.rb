@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160922180428) do
+ActiveRecord::Schema.define(version: 20160922200431) do
+
+  create_table "costs", force: :cascade do |t|
+    t.integer  "user_id"
+    t.decimal  "price",                  precision: 6, scale: 2
+    t.text     "store",      limit: 20
+    t.text     "comment",    limit: 200
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+    t.index ["user_id"], name: "index_costs_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.text     "name",            limit: 30

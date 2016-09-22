@@ -1,0 +1,21 @@
+<h1>Listing costs</h1>
+<%= link_to 'New cost', new_cost_path %>
+<table>
+  <tr>
+    <th>Creation Timestamp</th>
+    <th>Price</th>
+    <th>Store</th>
+    <th>Comment</th>
+    <th>By</th>
+  </tr>
+
+  <% @costs.each do |cost| %>
+    <tr>
+      <td><%= cost.created_at %></td>
+      <td><%= cost.price %></td>
+      <td><%= cost.store %></td>
+      <td><%= cost.comment %></td>
+      <td><%= cost.user.name %></td>
+    </tr>
+  <% end %>
+</table>

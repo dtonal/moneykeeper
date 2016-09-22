@@ -6,4 +6,9 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+
+
+  resources :costs
+
+  root 'costs#index'
 end
