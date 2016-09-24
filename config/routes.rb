@@ -11,4 +11,9 @@ Rails.application.routes.draw do
   resources :costs
 
   root 'costs#index'
+
+  namespace :api do
+    resources :costs
+  end
+
 end
