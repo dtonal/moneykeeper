@@ -3,8 +3,6 @@ class SessionsController < ApplicationController
   def new
   end
 
-
-
   def create
     user = User.find_by_email(params[:email])
     # If the user exists AND the password entered is correct.
@@ -31,8 +29,6 @@ class SessionsController < ApplicationController
       format.json {  }
     end
     end
-
-
   end
 
   def destroy

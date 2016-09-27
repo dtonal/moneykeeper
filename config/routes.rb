@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   root 'costs#index'
 
   namespace :api do
-    resources :costs
+    resources :costs, :sessions
   end
+
 
 end
