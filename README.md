@@ -24,12 +24,6 @@ Things you may want to cover:
 * ...
 
 
-token = 0adc0104c5da42b6bce04f978ffc67fc
+curl -u mail:pass POST -d '{"price":"12.1","store":"TestSTore", "comment":"just a comment"}' http://localhost:3000/api/costs
 
-curl -H "Content-Type: application/json" -X POST -d '{"email":"12345@12345.de","password":"12345"}' http://localhost:3000/api/sessions
-
-curl -H "Authorization: Token token=0adc0104c5da42b6bce04f978ffc67fc" http://localhost:3000/api/costs
-
-curl -H "Authorization: Token token=0adc0104c5da42b6bce04f978ffc67fc" -X POST -d '{"price":"12.1","store":"TestSTore", "comment":"just a comment"}' http://localhost:3000/api/costs
-
-curl -H "Authorization: Token token=0adcprice]=12.1' -d 'cost[market]=ruuble' -d 'cost[comment]=Kommentar' http://localhost:3000/api/costs
+curl -u mail:pass -d 'cost[market]=ruuble' -d 'cost[comment]=Kommentar' http://localhost:3000/api/costs
