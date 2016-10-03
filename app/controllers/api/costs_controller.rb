@@ -6,5 +6,21 @@ module Api
       render :json => @costs.to_json
     end
 
+
+    def create
+      @cost = Cost.new(cost_params)
+      @cost.user_id = @current_user.id
+      if @cost.save
+        render :json => @cost.to_json
+      else
+        render nothing: true, status: :bad_request
+      end
+    end
+
+
+    private
+    def cost_params
+      params.require(:cost).permit(:price, :store, :comment)
+    end
   end
 end
