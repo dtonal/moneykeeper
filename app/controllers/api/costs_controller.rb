@@ -18,6 +18,13 @@ module Api
     end
 
 
+      def destroy
+        @cost = Cost.find(params[:id])
+        @cost.destroy
+        render :json => {:message => "Success"}, status: :ok
+      end
+
+
     private
     def cost_params
       params.require(:cost).permit(:price, :store, :comment)
