@@ -7,8 +7,8 @@ module Api
   class MonthstatsController < Api::BaseController
       def create
 
-       monthBegin = Date.new(params[:year], params[:month], 1)
-       monthEnd = Date.new(params[:year], params[:month], 1).end_of_month
+       monthBegin = Date.new(params[:year].to_i, params[:month].to_i, 1)
+       monthEnd = Date.new(params[:year].to_i, params[:month].to_i, 1).end_of_month
 
        puts monthBegin.inspect
        puts monthEnd.inspect
@@ -35,7 +35,7 @@ module Api
           end
         end
 
-        render json: allMonthStats, status: ok
+        render json: allMonthStats, status: :ok
 
       end
 
