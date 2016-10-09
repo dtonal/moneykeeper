@@ -28,10 +28,14 @@ module Api
           totalSum += costsForStore.sum(:price)
         end
         allMonthStats.each do |monthStat|
-          monthStat.percent = monthStat.sum / totalSum
+          if totalSum == 0 then
+            monthStat.percent = totalSum
+          else
+            monthStat.percent = monthStat.sum / totalSum
+          end
         end
 
-        render json: allMonthStats
+        render json: allMonthStats, status: ok
 
       end
 
