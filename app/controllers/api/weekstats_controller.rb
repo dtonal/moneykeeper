@@ -7,8 +7,8 @@ module Api
   class WeekstatsController < Api::BaseController
       def create
 
-       wkBegin = Date.commercial(params[:year], params[:week], 1)
-       wkEnd = Date.commercial(params[:year], params[:week], 7)
+       wkBegin = Date.commercial(params[:year].to_i, params[:week].to_i, 1)
+       wkEnd = Date.commercial(params[:year].to_i, params[:week].to_i, 7)
 
         allWeekStats = Array.new
         stores = Market.categories
