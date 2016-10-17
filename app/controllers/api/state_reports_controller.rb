@@ -28,6 +28,9 @@ module Api
 
        puts resultReport.inspect
 
+
+       render json: resultReport, status: :ok
+
       end
 
       def getSumOfCostsForDay(requestedDay)
