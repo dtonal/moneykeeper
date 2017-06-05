@@ -1,5 +1,5 @@
 class Market < ActiveRecord::Base
   def self.categories
-    ['Supermarkt', 'Discounter', 'Drogerie', 'Tiershop', 'Baumarkt', 'Möbelhaus', 'Buchhandlung', 'Restaurant', 'Fussball', 'Nähladen', 'Stricken', 'Tankstelle', 'Bioladen', 'Internet']
+    ['Lebensmittel', 'Hobby Maria', 'Haushalt', 'Hobby Torben', 'Sonstiges']
   end
 end
